@@ -1,31 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Indice principal
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+Route::get('/', function () { return view('master'); });
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+/**
+ * Rutas para las salas
+ */
+
+//A esta ruta se accede desde el menu principal al pinchar en salas, devuelve la vista principal donde se listan todas las salas
+Route::get('salas', ['as' => 'salas', 'uses' => 'SalaController@index']);
+
+//A esta ruta se accede al pinchar en una de las salas, devuelve la vista principal de una sala
+Route::get('sala-{id}', ['as' => 'sala', 'uses' => 'SalaController@show']);
