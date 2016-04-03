@@ -17,3 +17,10 @@ Route::get('salas', ['as' => 'salas', 'uses' => 'SalaController@index']);
 
 //A esta ruta se accede al pinchar en una de las salas, devuelve la vista principal de una sala
 Route::get('sala-{id}', ['as' => 'sala', 'uses' => 'SalaController@show']);
+
+
+//Register
+
+Route::get('register', ['as' => 'register', function () { return view('register'); }]);
+Route::get('login', ['as' => 'login', function () { return view('login'); }]);
+

@@ -155,6 +155,9 @@ return [
         istudy\Providers\AuthServiceProvider::class,
         istudy\Providers\EventServiceProvider::class,
         istudy\Providers\RouteServiceProvider::class,
+        'Way\Generators\GeneratorsServiceProvider',
+        'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+        'User11001\EloquentModelGenerator\EloquentModelGeneratorProvider',
 
     ],
 
@@ -201,6 +204,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
 
     ],
 
